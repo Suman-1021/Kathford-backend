@@ -60,17 +60,6 @@ exports.deleteCategory=async(req,res)=>{
   {return res.status(400).json({error:err.message,detail:"category not found"})}
   
 };
-exports.testCategory=async(req,res)=>{
-  try{let category= await Category.findByIdAndDelete(req.params.id,{category_name:req.body.category_name});
-  if(!category){
-   return res.status(400).json({ error:"not found"});
-  }
-  return res.status(200).json({ category, success:"deleted"});}
-  catch(err)
-  {return res.status(400).json({error:err.message,detail:"category not found"})}
-  
-};
-
 
 //filter pass garda query bata pass
 //req.body
